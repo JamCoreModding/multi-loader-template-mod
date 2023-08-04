@@ -10,10 +10,10 @@ This repository uses a system I created called
 template automatically. After following the easytemplate prompt, you shouldn't
 have to make any changes before starting programming.
 
-1. Install [Deno](https://deno.land/#installation)
+1. Install [Deno](https://deno.land/)
 2. Click `Use This Template`
 3. Clone the repository.
-4. Run `deno run --allow-read --allow-write https://crux.land/easytemplate` in
+4. Run `deno run --allow-read --allow-write https://raw.githubusercontent.com/Jamalam360/easytemplate/main/easytemplate.ts` in
    the repository directory.
 5. Follow the instructions.
 
