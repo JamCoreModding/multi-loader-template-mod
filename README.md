@@ -21,3 +21,5 @@ have to make any changes before starting programming.
 
 This repository contains the MIT license for ease of use, but you can change it
 to whatever you want.
+
+This template is based off of [this repository](https://github.com/jaredlll08/MultiLoader-Template).
