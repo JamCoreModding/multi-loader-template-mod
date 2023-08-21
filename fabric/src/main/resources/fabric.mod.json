@@ -17,7 +17,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "{{group}}.{{mod_id}}.{{main_class}}Fabric"
+            "{{group}}.{{mod_id}}.fabric.{{main_class}}Fabric"
         ]
     },
     "mixins": [

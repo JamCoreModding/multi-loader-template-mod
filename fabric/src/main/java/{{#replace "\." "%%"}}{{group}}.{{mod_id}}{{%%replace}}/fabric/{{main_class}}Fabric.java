@@ -1,4 +1,4 @@
-package {{group}}.{{mod_id}};
+package {{group}}.{{mod_id}}.fabric;
 
 import net.fabricmc.api.ModInitializer;
 

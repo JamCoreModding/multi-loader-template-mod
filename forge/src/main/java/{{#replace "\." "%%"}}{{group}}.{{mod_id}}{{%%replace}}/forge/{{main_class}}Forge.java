@@ -1,4 +1,4 @@
-package {{group}}.{{mod_id}};
+package {{group}}.{{mod_id}}.forge;
 
 import net.minecraftforge.fml.common.Mod;
 
