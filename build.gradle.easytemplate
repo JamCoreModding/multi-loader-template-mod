@@ -82,6 +82,11 @@ subprojects {
             name = "Modrinth Maven"
             url = "https://api.modrinth.com/maven"
         }
+
+        maven {
+            name = "Jitpack"
+            url = "https://jitpack.io"
+        }
     }
 
     tasks.withType(JavaCompile).configureEach {

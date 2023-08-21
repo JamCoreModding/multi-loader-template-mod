@@ -56,9 +56,24 @@ minecraft {
     }
 }
 
+jarJar.enable()
+jar.finalizedBy("reobfJar")
+
+tasks.jarJar {
+    archiveClassifier = ""
+    mustRunAfter "reobfJar"
+}
+
 dependencies {
     minecraft libs.forge
     compileOnly project(":common")
+
+    implementation libs.mixin.extras.common
+    annotationProcessor libs.mixin.extras.common
+    jarJar(libs.mixin.extras.forge) {
+        jarJar.ranged(it, "[0.2.0-beta.9,)")
+    }
+    implementation libs.mixin.extras.forge
     annotationProcessor variantOf(libs.mixin) {
         classifier("processor")
     }
@@ -106,5 +121,3 @@ tasks.named("sourcesJar", Jar) {
 processResources {
     from project(":common").sourceSets.main.resources
 }
-
-jar.finalizedBy("reobfJar")

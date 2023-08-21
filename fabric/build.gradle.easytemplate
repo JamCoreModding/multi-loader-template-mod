@@ -17,6 +17,9 @@ dependencies {
     modImplementation libs.fabric.loader
     modImplementation libs.fabric.api
     implementation project(":common")
+    implementation libs.mixin.extras.fabric
+    include libs.mixin.extras.fabric
+    annotationProcessor libs.mixin.extras.fabric
 
     modLocalRuntime libs.modmenu
 }
