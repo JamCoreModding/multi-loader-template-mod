@@ -37,8 +37,10 @@ configurations {
 dependencies {
     forge libs.forge
     modApi libs.architectury.forge
-    implementation(annotationProcessor(libs.mixin.extras.common))
-    implementation(include(libs.mixin.extras.forge))
+    annotationProcessor libs.mixin.extras.common
+    implementation libs.mixin.extras.common
+    implementation libs.mixin.extras.forge
+    include libs.mixin.extras.forge
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
