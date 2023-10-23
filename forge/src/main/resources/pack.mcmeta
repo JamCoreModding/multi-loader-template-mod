@@ -1,6 +1,6 @@
 {
     "pack": {
         "description": "{{ name }}",
-        "pack_format": 8
+        "pack_format": 15
     }
 }

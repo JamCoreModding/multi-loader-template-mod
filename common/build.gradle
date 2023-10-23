@@ -1,23 +1,12 @@
-plugins {
-    id "java"
-    id "idea"
-    id "org.spongepowered.gradle.vanilla"
+architectury {
+    common(rootProject.enabled_platforms.split(","))
 }
 
-base {
-    archivesName = "${mod_name}-common-${minecraft_version}"
-}
-
-minecraft {
-    version(minecraft_version)
-
-    if(file("src/main/resources/${mod_id}.accesswidener").exists()){
-        accessWideners(file("src/main/resources/${mod_id}.accesswidener"))
-    }
+loom {
+    accessWidenerPath = file("src/main/resources/{{ mod_id }}.accesswidener")
 }
 
 dependencies {
-    compileOnly libs.mixin
-    implementation libs.mixin.extras.common
-    annotationProcessor libs.mixin.extras.common
+    modImplementation libs.fabric.loader
+    modApi libs.architectury.common
 }

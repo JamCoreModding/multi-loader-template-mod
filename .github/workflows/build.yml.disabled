@@ -34,13 +34,19 @@ jobs:
           java-version: 17
 
       - name: Build
-        run: ./gradlew clean forge:build fabric:build
+        run: ./gradlew clean forge:build fabric:build quilt:build
 
       - name: Capture Fabric Build Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: Fabric Artifacts
           path: fabric/build/libs/
+
+      - name: Capture Quilt Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Quilt Artifacts
+          path: quilt/build/libs/
 
       - name: Capture Forge Build Artifacts
         uses: actions/upload-artifact@v2

@@ -1,53 +1,40 @@
 plugins {
-    id "java"
-    id "idea"
-    id "fabric-loom"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
     {{#if unified_publishing}}
-    id "me.shedaniel.unified-publishing"
+    id "me.shedaniel.unified-publishing" version "0.1.+"
     {{/if}}
 }
 
-base {
-    archivesName = "${mod_name}-fabric-${minecraft_version}"
+architectury {
+    platformSetupLoomIde()
+    fabric()
 }
 
-dependencies {
-    minecraft "com.mojang:minecraft:${minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation libs.fabric.loader
-    modImplementation libs.fabric.api
-    implementation project(":common")
-    implementation libs.mixin.extras.fabric
-    include libs.mixin.extras.fabric
-    annotationProcessor libs.mixin.extras.fabric
-
-    modLocalRuntime libs.modmenu
+base {
+    archivesName = "{{mod_id}}-fabric-${minecraft_version}"
 }
 
 loom {
-    if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
-        accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
-    }
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+}
 
-    mixin {
-        defaultRefmapName.set("${mod_id}.refmap.json")
-    }
+configurations {
+    common
+    shadowCommon 
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+}
 
-    runs {
-        client {
-            client()
-            setConfigName("Fabric Client")
-            ideConfigGenerated(true)
-            runDir("run")
-        }
+dependencies {
+    modImplementation libs.fabric.loader
+    modApi libs.fabric.api
+    modApi libs.architectury.fabric
 
-        server {
-            server()
-            setConfigName("Fabric Server")
-            ideConfigGenerated(true)
-            runDir("run")
-        }
-    }
+    common(project(path: ":common", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+    common(project(path: ":fabric-like", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":fabric-like", configuration: "transformProductionFabric")) { transitive false }
 }
 {{#if unified_publishing}}
 
@@ -59,7 +46,7 @@ if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_K
 //            changelog = rootProject.file("CHANGELOG.md").text
 //            releaseType = project.version.contains("beta") ? "beta" : "release"
 //            gameVersions = [project.minecraft_version]
-//            gameLoaders = ["fabric", "quilt"]
+//            gameLoaders = ["fabric"]
 
 //            mainPublication tasks.remapJar
 
@@ -77,18 +64,27 @@ if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_K
 }
 {{/if}}
 
-tasks.withType(JavaCompile).configureEach {
-    source(project(":common").sourceSets.main.allSource)
+shadowJar {
+    exclude "architectury.common.json"
+
+    configurations = [project.configurations.shadowCommon]
+    archiveClassifier = "dev-shadow"
 }
 
-tasks.withType(Javadoc).configureEach {
-    source(project(":common").sourceSets.main.allJava)
+remapJar {
+    injectAccessWidener = true
+    input.set shadowJar.archiveFile
+    dependsOn shadowJar
 }
 
-tasks.named("sourcesJar", Jar) {
-    from(project(":common").sourceSets.main.allSource)
+sourcesJar {
+    def commonSources = project(":common").sourcesJar
+    dependsOn commonSources
+    from commonSources.archiveFile.map { zipTree(it) }
 }
 
-processResources {
-    from project(":common").sourceSets.main.resources
+components.java {
+    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
+        skip()
+    }
 }

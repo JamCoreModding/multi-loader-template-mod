@@ -13,19 +13,12 @@ pluginManagement {
         }
 
         maven {
-            name = "Sponge Snapshots"
-            url = "https://repo.spongepowered.org/repository/maven-public/"
-        }
-
-        maven {
             name = "Architectury"
             url = "https://maven.architectury.dev/"
         }
-    }
-}
 
-plugins {
-    id "org.gradle.toolchains.foojay-resolver-convention" version "0.5.0"
+        gradlePluginPortal()
+    }
 }
 
 dependencyResolutionManagement {
@@ -38,5 +31,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "{{ mod_id }}"
 include("common")
+include("fabric-like")
 include("fabric")
+include("quilt")
 include("forge")
