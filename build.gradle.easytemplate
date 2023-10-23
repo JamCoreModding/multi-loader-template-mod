@@ -59,6 +59,8 @@ allprojects {
     group = rootProject.group
 
     repositories {
+        mavenCentral()
+
         maven {
             name = "Modrinth"
             url = "https://api.modrinth.com/maven"
