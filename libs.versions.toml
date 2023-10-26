@@ -6,7 +6,7 @@ mixin-extras = "0.2.0"
 architectury = "10.0.8"
 
 # https://files.minecraftforge.net/net/minecraftforge/forge/
-forge = "1.20.2-48.0.31"
+forge = "1.20.2-48.0.33"
 
 # https://fabricmc.net/develop
 fabric-loader = "0.14.23"
@@ -15,6 +15,9 @@ fabric-api = "0.90.4+1.20.2"
 # https://lambdaurora.dev/tools/import_quilt.html
 quilt-loader = "0.21.1"
 quilted-fabric-api = "7.4.0+0.90.0-1.20.1"
+
+# https://maven.jamalam.tech/#/releases
+jamlib = "1.0.0-beta.1"
 
 # https://modrinth.com/mod/modmenu/versions
 modmenu = "8.0.0"
@@ -34,5 +37,10 @@ fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fab
 
 quilt-loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt-loader" }
 quilted-fabric-api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted-fabric-api" }
+
+jamlib-common = { module = "io.github.jamalam360:jamlib", version.ref = "jamlib" }
+jamlib-fabric = { module = "io.github.jamalam360:jamlib-fabric", version.ref = "jamlib" }
+jamlib-quilt = { module = "io.github.jamalam360:jamlib-quilt", version.ref = "jamlib" }
+jamlib-forge = { module = "io.github.jamalam360:jamlib-forge", version.ref = "jamlib" }
 
 modmenu = { module = "maven.modrinth:modmenu", version.ref = "modmenu" }

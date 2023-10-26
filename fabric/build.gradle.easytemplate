@@ -31,6 +31,7 @@ dependencies {
     modApi libs.fabric.api
     modApi libs.architectury.fabric
     modRuntimeOnly libs.modmenu
+    modImplementation libs.jamlib.fabric
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }

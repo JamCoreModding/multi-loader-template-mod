@@ -41,6 +41,7 @@ dependencies {
     implementation libs.mixin.extras.common
     implementation libs.mixin.extras.forge
     include libs.mixin.extras.forge
+    modImplementation libs.jamlib.forge
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
