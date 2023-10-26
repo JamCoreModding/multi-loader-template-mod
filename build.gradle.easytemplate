@@ -77,12 +77,6 @@ allprojects {
     java {
         withSourcesJar()
     }
-
-    processResources {
-        filesMatching(["pack.mcmeta", "fabric.mod.json", "mods.toml", "*.mixins.json", "quilt.mod.json"]) {
-            expand project.properties
-        }
-    }
     {{#ifCond github_publish '||' unified_publishing}}
     
     tasks.publish {

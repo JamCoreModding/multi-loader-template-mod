@@ -76,6 +76,14 @@ if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_K
 }
 {{/if}}
 
+processResources {
+    filesMatching("quilt.mod.json") {
+        expand "version": project.version
+    }
+
+    inputs.property "version", project.version
+}
+
 shadowJar {
     exclude "architectury.common.json"
 
