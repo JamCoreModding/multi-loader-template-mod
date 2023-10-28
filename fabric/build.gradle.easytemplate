@@ -49,14 +49,31 @@ if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_K
 //            releaseType = project.version.contains("beta") ? "beta" : "release"
 //            gameVersions = [project.minecraft_version]
 //            gameLoaders = ["fabric"]
-
+//
 //            mainPublication tasks.remapJar
-
+//
+//            relations {
+//                depends {
+//                    curseforge = "fabric-api"
+//                    modrinth = "fabric-api"
+//                }
+//
+//                depends {
+//                    curseforge = "architectury-api"
+//                    modrinth = "architectury-api"
+//                }
+//
+//                depends {
+//                    curseforge = "jamlib"
+//                    modrinth = "jamlib
+//                }
+//            }
+//
 //            curseforge {
 //                token = System.getenv("CURSEFORGE_API_KEY")
 //                id = ""
 //            }
-
+//
 //            modrinth {
 //                token = System.getenv("MODRINTH_API_KEY")
 //                id = ""

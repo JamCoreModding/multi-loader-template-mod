@@ -86,7 +86,7 @@ allprojects {
     
     tasks.publish {
         {{#if github_publish}}
-        dependsOn("githubRelease")
+        dependsOn(":githubRelease")
         {{/if}}
         {{#if unified_publishing}}
         dependsOn("fabric:publishUnified")
