@@ -30,6 +30,7 @@
         "fabric": "*",
         "minecraft": ">=1.20",
         "java": ">=17",
-        "architectury": ">=9.1.12"
+        "architectury": ">=9.1.12",
+        "jamlib": ">=1.0.0"
     }
 }

@@ -40,6 +40,10 @@
       {
         "id": "architectury",
         "version": ">=9.1.12"
+      },
+      {
+        "id": "jamlib",
+        "version": ">=1.0.0"
       }
     ]
   },

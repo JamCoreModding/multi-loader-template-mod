@@ -16,8 +16,6 @@ pluginManagement {
             name = "Architectury"
             url = "https://maven.architectury.dev/"
         }
-
-        gradlePluginPortal()
     }
 }
 

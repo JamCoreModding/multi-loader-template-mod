@@ -65,7 +65,7 @@ if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_K
 //
 //                depends {
 //                    curseforge = "jamlib"
-//                    modrinth = "jamlib
+//                    modrinth = "jamlib"
 //                }
 //            }
 //
