@@ -77,6 +77,10 @@ allprojects {
             name = "Jamalam's Maven"
             url = "https://maven.jamalam.tech/releases"
         }
+
+        maven {
+            url “https://maven.neoforged.net/releases/”
+        }
     }
 
     tasks.withType(JavaCompile) {

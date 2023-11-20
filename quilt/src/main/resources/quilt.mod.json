@@ -1,9 +1,7 @@
 {
   "schema_version": 1,
   "mixin": [
-    "{{mod_id}}.mixins.json",
-    "{{mod_id}}.fabriclike.mixins.json",
-    "{{mod_id}}.quilt.mixins.json"
+    "{{mod_id}}.mixins.json"
   ],
   "quilt_loader": {
     "group": "{{ group }}",

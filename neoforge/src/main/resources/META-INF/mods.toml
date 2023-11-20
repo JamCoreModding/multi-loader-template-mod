@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[1,)"
 license = "MIT"
 issueTrackerURL="https://github.com/{{github_owner}}/{{github_repo}}/issues"
 
@@ -15,9 +15,9 @@ description = '''
 '''
 
 [[dependencies.{{mod_id}}]]
-modId = "forge"
+modId = "neoforge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[20.2,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -41,3 +41,6 @@ mandatory = true
 versionRange = "[1.0.0,)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[mixins]]
+config = "{{mod_id}}.mixins.json"

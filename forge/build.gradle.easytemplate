@@ -21,7 +21,6 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
-        mixinConfig "{{ mod_id }}.forge.mixins.json"
         mixinConfig "{{ mod_id }}.mixins.json"
     }
 }
@@ -74,13 +73,11 @@ if (System.getenv("CURSEFORGE_API_KEY") != null && System.getenv("MODRINTH_API_K
 //            curseforge {
 //                token = System.getenv("CURSEFORGE_API_KEY")
 //                id = ""
-//                gameLoaders.add("NeoForge")
 //            }
 //
 //            modrinth {
 //                token = System.getenv("MODRINTH_API_KEY")
 //                id = ""
-//                gameLoaders.add("neoforge")
 //            }
 //        }
 //    }
