@@ -54,3 +54,10 @@ jobs:
         with:
           name: NeoForge Artifacts
           path: neoforge/build/libs/
+      
+      # Runs a test server, exiting with a zero exit code after 2 minutes.
+      - name: Run Test Server (Fabric)
+        run: timeout 1m ./gradlew fabric:runServer
+
+      - name: Run Test Server (NeoForge)
+        run: timeout 1m ./gradlew neoforge:runServer
