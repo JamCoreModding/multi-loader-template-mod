@@ -26,6 +26,13 @@ configurations {
     developmentNeoForge.extendsFrom common
 }
 
+repositories {
+    maven {
+        name = "NeoForge"
+        url = "https://maven.neoforged.net"
+    }
+}
+
 dependencies {
     neoForge libs.neoforge
     modApi libs.architectury.neoforge
