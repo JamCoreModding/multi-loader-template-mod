@@ -11,11 +11,7 @@ architectury {
 }
 
 base {
-    archivesName = "{{mod_id}}-forge-${minecraft_version}"
-}
-
-loom {
-    accessWidenerPath = project(":common").loom.accessWidenerPath
+    archivesName = "{{mod_id}}-neoforge-${minecraft_version}"
 }
 
 configurations {
@@ -42,7 +38,7 @@ dependencies {
     forgeRuntimeLibrary "blue.endless:jankson:1.2.3"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 }
 {{#if unified_publishing}}
 

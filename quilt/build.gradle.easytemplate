@@ -14,10 +14,6 @@ base {
     archivesName = "{{mod_id}}-quilt-${minecraft_version}"
 }
 
-loom {
-    accessWidenerPath = project(":common").loom.accessWidenerPath
-}
-
 configurations {
     common
     shadowCommon 
