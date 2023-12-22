@@ -56,7 +56,7 @@ jobs:
           path: neoforge/build/libs/
       
       - name: Agree to EULAs
-        run: echo "eula=true" > fabric/run/eula.txt && echo "eula=true" > neoforge/run/eula.txt
+        run: touch fabric/run/eula.txt && touch neoforge/run/eula.txt && echo "eula=true" > fabric/run/eula.txt && echo "eula=true" > neoforge/run/eula.txt
       
       - name: Run Test Server (Fabric)
         run: timeout 1m ./gradlew fabric:runServer
