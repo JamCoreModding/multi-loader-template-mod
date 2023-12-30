@@ -15,8 +15,8 @@ if (System.getenv("GITHUB_TOKEN") != null) {
         token(System.getenv("GITHUB_TOKEN"))
         owner("{{ github_owner }}")
         repo("{{ github_repo }}")
-        tagName("${project.version}+${minecraft_version}")
-        releaseName("V${project.version} [${minecraft_version}]")
+        tagName("${project.version}")
+        releaseName("V${project.version}")
         body(project.rootProject.file("CHANGELOG.md").text)
         draft(false)
 
@@ -35,7 +35,7 @@ subprojects {
     }
 
     base {
-        archivesName = "{{mod_id}}-${minecraft_version}"
+        archivesName = "{{mod_id}}"
     }
 
     jar {
