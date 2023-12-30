@@ -16,29 +16,29 @@ description = '''
 
 [[dependencies.{{mod_id}}]]
 modId = "neoforge"
-mandatory = true
-versionRange = "[20.2,)"
+type = "required"
+versionRange = "[20.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.{{mod_id}}]]
 modId = "minecraft"
-mandatory = true
-versionRange = "[1.20.2,)"
+type = "required"
+versionRange = "[1.20.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.{{mod_id}}]]
 modId = "architectury"
-mandatory = true
-versionRange = "[10.0.17,)"
+type = "required"
+versionRange = "[11.0.9,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.{{mod_id}}]]
 modId = "jamlib"
-mandatory = true
-versionRange = "[1.0.0,)"
+type = "required"
+versionRange = "[1.0.4+1.20.4,)"
 ordering = "AFTER"
 side = "BOTH"
 

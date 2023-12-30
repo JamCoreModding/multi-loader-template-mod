@@ -24,11 +24,9 @@
         "{{mod_id}}.mixins.json"
     ],
     "depends": {
-        "fabricloader": "*",
         "fabric": "*",
-        "minecraft": ">=1.20",
-        "java": ">=17",
-        "architectury": ">=9.1.12",
-        "jamlib": ">=1.0.0"
+        "minecraft": ">=1.20.4",
+        "architectury": ">=11.0.9",
+        "jamlib": ">=1.0.4+1.20.4"
     }
 }
