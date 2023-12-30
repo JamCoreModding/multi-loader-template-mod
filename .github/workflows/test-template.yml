@@ -59,7 +59,7 @@ jobs:
         run: mkdir fabric/run && touch fabric/run/eula.txt && mkdir neoforge/run && touch neoforge/run/eula.txt && echo "eula=true" > fabric/run/eula.txt && echo "eula=true" > neoforge/run/eula.txt
       
       - name: Run Test Server (Fabric)
-        run: timeout 1m ./gradlew fabric:runServer || exit 0
+        run: chmod +x .github/workfows/test-server && ./.github/workflows/test-server fabric
 
       - name: Run Test Server (NeoForge)
-        run: timeout 1m ./gradlew neoforge:runServer || exit 0
+        run: chmod +x .github/workfows/test-server && ./.github/workflows/test-server neoforge
