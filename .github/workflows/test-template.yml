@@ -18,7 +18,7 @@ jobs:
           deno-version: "canary"
 
       - name: Initialize template
-        run: deno run --allow-read --allow-write --allow-env=FORCE_COLOR https://raw.githubusercontent.com/Jamalam360/easytemplate/main/easytemplate.ts --disable-interactive-mode --input name="Template Mod Test Mod" --input mod_id=template_mod_test --input description="This is a mod to test the template mod." --input author=Jamalam360 --input group="io.github.jamalam360" --input main_class="TemplateModTest" --input github_owner="JamCoreModding" --input github_repo="multi-loader-template-mod" --input github_publish=true --input unified_publishing=true
+        run: deno run --allow-read --allow-write --allow-env https://raw.githubusercontent.com/Jamalam360/easytemplate/main/easytemplate.ts --disable-interactive-mode --input name="Template Mod Test Mod" --input mod_id=template_mod_test --input description="This is a mod to test the template mod." --input author=Jamalam360 --input group="io.github.jamalam360" --input main_class="TemplateModTest" --input github_owner="JamCoreModding" --input github_repo="multi-loader-template-mod" --input github_publish=true --input unified_publishing=true
 
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
@@ -54,10 +54,13 @@ jobs:
         with:
           name: NeoForge Artifacts
           path: neoforge/build/libs/
-      
+
       - name: Agree to EULAs
         run: mkdir fabric/run && touch fabric/run/eula.txt && mkdir neoforge/run && touch neoforge/run/eula.txt && echo "eula=true" > fabric/run/eula.txt && echo "eula=true" > neoforge/run/eula.txt
-      
+
+      - name: Copy Test Server Script
+        run: cp backup/.github/workflows/test-server ./.github/workflows/test-server
+
       - name: Run Test Server (Fabric)
         run: chmod +x .github/workflows/test-server && ./.github/workflows/test-server fabric
 

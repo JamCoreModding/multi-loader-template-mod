@@ -69,6 +69,7 @@
     "build",
     "run",
     "build.yml.disabled",
-    "test-template.yml"
+    "test-template.yml",
+    "test-server"
   ]
 }
