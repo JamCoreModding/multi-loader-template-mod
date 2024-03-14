@@ -2,7 +2,7 @@
 
 platform=$1
 output_file=$(mktemp)
-./gradlew $platform:runClient > "$output_file" 2>&1 &
+./gradlew $platform:runServer > "$output_file" 2>&1 &
 command_pid=$!
 sleep 60
 
