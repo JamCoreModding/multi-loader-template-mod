@@ -15,7 +15,7 @@ have to make any changes before starting programming.
 2. Click `Use This Template`
 3. Clone the repository.
 4. Run
-   `deno run --allow-read --allow-write https://raw.githubusercontent.com/Jamalam360/easytemplate/main/easytemplate.ts`
+   `deno run --allow-read --allow-write --allow-env https://raw.githubusercontent.com/Jamalam360/easytemplate/main/easytemplate.ts`
    in the repository directory.
 5. Follow the instructions.
 6. See [the docs](https://docs.jamalam.tech) for more information.
