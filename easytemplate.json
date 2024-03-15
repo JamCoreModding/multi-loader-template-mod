@@ -65,11 +65,13 @@
   "exclude": [
     ".git",
     ".idea",
-    ".gradle",
-    "build",
-    "run",
-    "build.yml.disabled",
-    "test-template.yml",
-    "test-server"
+    "**/build.yml.disabled",
+    "**/build",
+    "**/run",
+    ".gradle"
+  ],
+  "ignore": [
+    "**/test-template.yml",
+    "**/test-server"
   ]
 }
