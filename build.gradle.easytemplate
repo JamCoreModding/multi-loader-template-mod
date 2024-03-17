@@ -34,10 +34,6 @@ subprojects {
         silentMojangMappingsLicense()
     }
 
-    base {
-        archivesName = "{{mod_id}}"
-    }
-
     jar {
         manifest {
             attributes([
@@ -47,7 +43,7 @@ subprojects {
                     'Implementation-Version'  : project.jar.archiveVersion,
                     'Built-On-Java'           : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
                     'Built-On-Minecraft'      : minecraft_version,
-                    'JamLib-File-Name'        : "jamlib-${project.base.archivesName.get()}-${rootProject.version}.jar",
+                    'JamLib-File-Name'        : "{{mod_id}}-${project.base.archivesName.get()}-${rootProject.version}.jar",
             ])
         }
     }
