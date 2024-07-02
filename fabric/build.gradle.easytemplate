@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
     {{#if unified_publishing}}
     id "me.shedaniel.unified-publishing"
     {{/if}}
@@ -24,8 +24,8 @@ configurations {
 
 dependencies {
     modImplementation libs.fabric.loader
-    modApi libs.fabric.api
-    modApi libs.architectury.fabric
+    modImplementation libs.fabric.api
+    modImplementation libs.architectury.fabric
     modRuntimeOnly libs.modmenu
     modImplementation libs.jamlib.fabric
 

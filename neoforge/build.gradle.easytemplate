@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
     {{#if unified_publishing}}
     id "me.shedaniel.unified-publishing"
     {{/if}}
@@ -31,7 +31,7 @@ repositories {
 
 dependencies {
     neoForge libs.neoforge
-    modApi libs.architectury.neoforge
+    modImplementation libs.architectury.neoforge
     modImplementation libs.jamlib.neoforge
 
     // Dependency of JamLib

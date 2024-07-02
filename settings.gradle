@@ -30,6 +30,4 @@ dependencyResolutionManagement {
 rootProject.name = "{{ mod_id }}"
 include("common")
 include("fabric")
-include("quilt")
 include("neoforge")
-include("forge")

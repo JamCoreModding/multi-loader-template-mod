@@ -1,6 +1,6 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.5-SNAPSHOT" apply false
+    id "dev.architectury.loom" version "1.7-SNAPSHOT" apply false
     {{#if unified_publishing}}
     id "me.shedaniel.unified-publishing" version "0.1.+" apply false
     {{/if}}
@@ -76,9 +76,13 @@ allprojects {
         }
     }
 
+    base {
+        archivesName = "{{mod_id}}"
+    }
+
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
-        options.release = 17
+        options.release = 21
     }
 
     tasks.create("prepareWorkspace") {}
@@ -94,8 +98,6 @@ allprojects {
         {{/if}}
         {{#if unified_publishing}}
         dependsOn("fabric:publishUnified")
-        dependsOn("quilt:publishUnified")
-        dependsOn("forge:publishUnified")
         dependsOn("neoforge:publishUnified")
         {{/if}}
     }
