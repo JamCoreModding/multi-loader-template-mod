@@ -3,7 +3,7 @@
 architectury = "13.0.6"
 
 # https://parchmentmc.org/docs/getting-started
-parchment_minecraft = "1.21"
+parchment-minecraft = "1.21"
 parchment = "2024.07.28"
 
 # https://projects.neoforged.net/neoforged/neoforge
