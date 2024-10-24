@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/{{github_owner}}/{{github_repo}}/issues"
 
 [[mods]]
 modId = "{{mod_id}}"
-version = "${file.jarVersion}"
+version = "${version}"
 displayName = "{{name}}"
 displayURL="https://github.com/{{github_owner}}/{{github_repo}}"
 logoFile = "icon.png"
@@ -17,7 +17,7 @@ description = '''
 [[dependencies.{{mod_id}}]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.2,)"
+versionRange = "[${neoforge_version},)"
 ordering = "NONE"
 side = "BOTH"
 
