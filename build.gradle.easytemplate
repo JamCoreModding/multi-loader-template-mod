@@ -32,6 +32,10 @@ subprojects {
 
     loom {
         silentMojangMappingsLicense()
+
+        mixin {
+            useLegacyMixinAp = false
+        }
     }
 
     jar {
