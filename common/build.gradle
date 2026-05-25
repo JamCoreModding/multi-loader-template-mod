@@ -3,7 +3,6 @@ architectury {
 }
 
 dependencies {
-    modImplementation libs.fabric.loader
-    modImplementation libs.architectury.common
-    modImplementation libs.jamlib.common
+    implementation libs.fabric.loader
+    implementation libs.jamlib.common
 }
