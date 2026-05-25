@@ -23,11 +23,11 @@ jobs:
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v2
 
-      - name: Setup JDK 21
+      - name: Setup JDK 25
         uses: actions/setup-java@v2
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 25
 
       - name: Build
         run: ./gradlew clean neoforge:build fabric:build
