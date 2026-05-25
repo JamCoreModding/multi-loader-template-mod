@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "8.3.3"
+    id "com.gradleup.shadow" version "8.3.3"
     {{#if unified_publishing}}
     id "me.shedaniel.unified-publishing"
     {{/if}}
